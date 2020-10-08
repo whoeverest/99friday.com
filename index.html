@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	function getRandomInt (min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	var days = ['понеделник', 'вторник', 'среда', 'четврток', 'петок'];
+	var places = ['во Берлин', 'во Русија', 'во банка во Швајцарија', 'кај тој од Техниколор',
+		'во Стопанска', 'на граница', 'на второ ниво', 'кај Тито Петковски', 'во шума',
+		'кај што е многу длабоко и никој не може да загњури', 'во канал за поправање коли',
+		'на Карибите меѓу рибите', 'во Тетекс фабриката што е под стечај', 'кај Велија',
+		'на темниот дел од месечината', 'во едно мало дупче меѓу две парчиња од ламинатот',
+		'кај што ниеден човек нема стапнато а да се вратил жив', 'во мајонезот од Седмица',
+		'на една гранка што е многу скапана на дрвоно од спротива', 'кај Господ Бог',
+		'кај на Дева Марија малиот во шкафчето', 'во мејлот од Гранатино', 'на сметката на PayPal',
+		'меѓу многу ситни лебни мрвици', 'во погрешна фаза на електромагнетниот спектар',
+		'во вагинален грч со девојката', 'меѓу малиот и домалиот прст на бабичката од комшии',
+                'во хаосот што се случи кога се испретурија работите во петокот'
+	];
+
+	$(function() {
+		var day = days[getRandomInt(0, days.length - 1)];
+		$('#percent').text(getRandomInt(60, 100) + '%');
+		$('#day').text(day);
+		$('#day2').text(day);
+		$('#place').text(places[getRandomInt(0, places.length - 1)]);
+		$('#count').text(getRandomInt(2, 9));
+	})
+	</script>
+
+	<style type="text/css">
+	#main {
+		width: 920px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 50px;
+	}
+	.text {
+		font-size: 30px;
+	}
+	</style>
+</head>
+<body>
+<div id="main">
+	<h1>Дали има плата?</h1>
+	<div class="text">Не.</div>
+	<h1>Кога ќе има плата?</h1>
+	<div class="text">
+		Значи плата ќе има <span id="percent"></span> во <span id="day"></span>. Проблемот е што парите се заглавени <span id="place"></span>. Ако нема во <span id="day2"></span> дефинитивно ќе има за <span id="count"></span> дена после тоа.
+	</div>
+</div>
+</body>
+</html>
